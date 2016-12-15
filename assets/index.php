@@ -1,6 +1,5 @@
 <?php
 include("header.php");
-include("footer.php");
 ?>
 /**
  * Created by PhpStorm.
@@ -8,3 +7,6 @@ include("footer.php");
  * Date: 15/12/2016
  * Time: 09:16
  */
+ <?php include "menu.php" ?>
+
+ <?php include "footer.php" ?>
