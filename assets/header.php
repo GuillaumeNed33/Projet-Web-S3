@@ -8,6 +8,9 @@
     <!---------------------------------STYLESHEET--------------------------------------->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!------------------------------------FAVICON--------------------------------------->
+    <link rel="icon" href="img/favicon.png">
     <!------------------------------------SCRIPTS--------------------------------------->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
