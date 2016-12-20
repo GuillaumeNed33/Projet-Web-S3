@@ -1,4 +1,6 @@
-        <footer class=bs-docs-footer>
+<!------------------------------------FOOTER--------------------------------------->
+
+<footer class=bs-docs-footer>
             <div class=container>
                 <img src="img/logo_iut.png">
                 <div class=bs-docs-footer-links><b>Plan du Site</b>

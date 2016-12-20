@@ -15,16 +15,23 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
 </head>
+
 <body>
+
+<!------------------------------------HEADER--------------------------------------->
+
   <header>
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
           <div class="container-fluid">
 
               <div class="navbar-header">
-                  <!--<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                  <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                       <span class="sr-only">Toggle navigation</span>
-                      <i class="icon-menu"></i> Menu
-                  </button>-->
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+
+                  </button>
                   <a class="navbar-brand" href="/">Projet Web</a>
               </div>
 
@@ -58,7 +65,7 @@
                       <li><a href="#">Connexion</a></li>
                   </ul>
               </div>
-
           </div>
       </nav>
   </header>
+
