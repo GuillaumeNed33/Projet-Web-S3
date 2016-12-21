@@ -2,9 +2,126 @@
 
 <!------------------------------------BODY --------------------------------------->
 
-<main class="bs-docs-masthead" id="content" tabindex="-1">
-    <div class="container" >Bienvenue dans La boutique musicale de Thomas et Guillaume
+<main class="container-fluid">
+    <div class="row">
+        <h2>Bienvenue dans La boutique musicale de Thomas et Guillaume</h2>
         <p>Acheter les albums </p>
+    </div>
+
+    <div class="row">
+        <p>test</p>
+    </div>
+    <div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div>
+    <div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
+    </div><div class="row">
+        <p>test</p>
     </div>
 </main>
 
