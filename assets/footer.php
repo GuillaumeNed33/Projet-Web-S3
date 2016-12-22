@@ -12,6 +12,8 @@
                         <a href="#">Epoque</a> -
                         <a href="#">Instruments</a> -
                         <a href="#">Genre</a>
+                        <br>
+                        <a href="#">À propos</a>
                     </p>
                 </div>
                 <p id="copyright">&copy; PommePoireBanane - Thomas Blanc & Guillaume Nedelec - 2016/2017<p>

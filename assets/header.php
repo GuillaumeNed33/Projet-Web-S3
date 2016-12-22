@@ -56,6 +56,9 @@
                       <li>
                           <a href="#">Genre</a>
                       </li>
+                      <li>
+                          <a href="#">À propos</a>
+                      </li>
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">

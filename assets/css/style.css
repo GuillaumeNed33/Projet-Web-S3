@@ -1,6 +1,15 @@
 main {
-    margin-top: 500px;
-    padding-top: 100px;
+    padding-top: 75px;
+}
+
+h2 {
+    text-align : center;
+    margin-bottom: 50px;
+}
+
+.preview {
+    text-align: center;
+    height: 300px;
 }
 
 .bs-docs-footer {
@@ -10,8 +19,6 @@ main {
     color: #99979c;
     text-align: center;
     background-color: #2a2730;
-   /* position: relative;
-   /* bottom: 0;*/
     width: 100%
 }
 
@@ -21,3 +28,4 @@ footer img {
 #copyright {
     margin-top: 50px;
 }
+
