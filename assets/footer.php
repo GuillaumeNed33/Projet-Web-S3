@@ -2,7 +2,7 @@
 
 <footer class="bs-docs-footer">
             <div class=container>
-                <img src="img/logo_iut.png">
+                <a href="https://www.iut.u-bordeaux.fr/info/"><img src="img/logo_iut.png"></a>
                 <div class=bs-docs-footer-links><b>Plan du Site</b>
                     <p>
                         <a href="#">Compositeurs</a> -
