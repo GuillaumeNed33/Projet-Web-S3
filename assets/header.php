@@ -28,9 +28,8 @@
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
                       <span class="icon-bar"></span>
-
                   </button>
-                  <a class="navbar-brand" href="/">Projet Web</a>
+                  <a class="navbar-brand" href="index.php">Projet Web</a>
               </div>
 
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
@@ -58,14 +57,38 @@
                           <a href="#">Genre</a>
                       </li>
                       <li>
-                          <a href="#">À propos</a>
+                          <a href="contact.php">À propos</a>
                       </li>
                   </ul>
 
                   <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Connexion</a></li>
+                      <li><a href="#" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">Connexion</a></li>
                   </ul>
               </div>
           </div>
       </nav>
 </header>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+$('#myModal').on('shown.bs.modal', function () {
+  $('#myInput').focus()
+})
+</script>
