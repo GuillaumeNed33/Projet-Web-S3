@@ -14,7 +14,6 @@ foreach(range('A','z') as $i) {
 if ( isset($_GET['initiale']) && !empty($_GET['initiale']) ) {
     if(in_array($_GET['initiale'], $alphabet))
     {
-        echo "OKKKKK";
         $driver = 'sqlsrv';
         $host = 'INFO-SIMPLET';
         $nomDb = 'Classique_Web';
