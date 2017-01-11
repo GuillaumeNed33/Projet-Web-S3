@@ -31,32 +31,86 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php">Projet Web</a>
+          <a class="navbar-brand" href="index.php">Le Classicarium</a>
         </div>
 
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alphabétique<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Compositeurs</a></li>
-                <li><a href="#">Interprètes</a></li>
-                <li><a href="#">Chefs d'Orchestre</a></li>
-                <li><a href="#">Orchestres</a></li>
-              </ul>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
-              <ul class="dropdown-menu">
-                <li><a href"#">Compositeurs</a></li>
-                <li><a href="#">Interprètes</a></li>
-              </ul>
+              <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alphabétique<b class="caret"></b></a>
+                  <ul class="dropdown-menu multi-level">
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=compositeurs" class="dropdown-toggle" data-toggle="dropdown">Compositeurs</a>
+                          <ul class="dropdown-menu">
+                              <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
+                                  <li><a href="market.php?category=compositeurs&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
+                              <?php } ?>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=interpretes" class="dropdown-toggle" data-toggle="dropdown">Interprètes</a>
+                          <ul class="dropdown-menu">
+                              <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
+                                  <li><a href="market.php?category=interpretes&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
+                              <?php } ?>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=chefs_orchestre" class="dropdown-toggle" data-toggle="dropdown">Chefs d'Orchestre</a>
+                          <ul class="dropdown-menu">
+                              <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
+                                  <li><a href="market.php?category=chefs_orchestre&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
+                              <?php } ?>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=orchestres" class="dropdown-toggle" data-toggle="dropdown">Orchestres</a>
+                          <ul class="dropdown-menu">
+                              <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
+                                  <li><a href="market.php?category=orchestres&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
+                              <?php } ?>
+                          </ul>
+                      </li>
+                  </ul>
+              <li>
+              <li>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
+                  <ul class="dropdown-menu multi-level">
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=epoque&initiale=compo" class="dropdown-toggle" data-toggle="dropdown">Compositeurs</a>
+                          <ul class="dropdown-menu">
+                              <li><a href="market.php?category=epoque&initiale=A">Antiquité</a></li>
+                              <li><a href="market.php?category=epoque&initiale=MA">Moyen-Age</a></li>
+                              <li><a href="market.php?category=epoque&initiale=XVI">XVIe siècle</a></li>
+                              <li><a href="market.php?category=epoque&initiale=XVII">XVIIe siècle</a></li>
+                              <li><a href="market.php?category=epoque&initiale=XVIII">XVIIIe siècle</a></li>
+                              <li><a href="market.php?category=epoque&initiale=XIX">XIXe siècle</a></li>
+                              <li><a href="market.php?category=epoque&initiale=XX">XXe siècle</a></li>
+                          </ul>
+                      </li>
+                      <li class="dropdown-submenu">
+                          <a href="market.php?category=epoque&initiale=inter" class="dropdown-toggle" data-toggle="dropdown">Interprètes</a>
+                          <ul class="dropdown-menu">
+                              <li><a href="market.php?category=epoque&initiale=1900">Avant 1900</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1910">1900-1910</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1920">1910-1920</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1930">1920-1930</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1940">1930-1940</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1950">1940-1950</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1960">1950-1960</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1970">1960-1970</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1980">1970-1980</a></li>
+                              <li><a href="market.php?category=epoque&initiale=1990">1980-1990</a></li>
+                              <li><a href="market.php?category=epoque&initiale=2000">Après 1990</a></li>
+                          </ul>
+                      </li>
+                  </ul>
+              <li>
+            <li>
+              <a href="market.php?category=instruments">Instruments</a>
             </li>
             <li>
-              <a href="#">Instruments</a>
-            </li>
-            <li>
-              <a href="#">Genre</a>
+              <a href="market.php?category=genre">Genre</a>
             </li>
             <li>
               <a href="contact.php">À propos</a>
@@ -64,18 +118,12 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
-            <?php include("data/connexion.php"); ?>
-            <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom']))
-            { ?>
+            <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
               <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte</a></li>
-              <?php
-            }
-            else
-            { ?>
+              <?php }
+            else { ?>
               <li><a href="#" data-toggle="modal" data-target="#connexion">Connexion</a></li>
-              <?php
-            }
-            ?>
+              <?php } ?>
           </ul>
         </div>
       </div>
@@ -91,15 +139,15 @@
           <h4 class="modal-title" id="connexionLabel">Identifiez-vous</h4>
         </div>
         <div class="modal-body">
-          <form action="index.php" method="post">
+          <form action="connexion.php" method="post">
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-user" id="basic-addon1"></span>
-              <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1">
+              <input type="text" class="form-control" placeholder="Login" aria-describedby="basic-addon1" name="login">
             </div>
             <br>
             <div class="input-group">
               <span class="input-group-addon glyphicon glyphicon-lock" id="basic-addon1"></span>
-              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon2">
+              <input type="text" class="form-control" placeholder="Password" aria-describedby="basic-addon2" name="pass">
             </div>
           </form>
         </div>
@@ -124,7 +172,7 @@
       </div>
      <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <li><a href="data/disconnect.php">Se deconnecter</a></li>
+        <<button><a href="data/disconnect.php">Se deconnecter</a></<button>
       </div>
     </div>
   </div>
