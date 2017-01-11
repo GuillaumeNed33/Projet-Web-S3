@@ -19,7 +19,6 @@
 </head>
 
 <body>
-
   <!------------------------------------HEADER--------------------------------------->
   <header>
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">

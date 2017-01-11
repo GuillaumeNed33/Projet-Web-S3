@@ -51,7 +51,7 @@ header {
 }
 
 main {
-    min-height: 300px;
+    min-height: 350px;
 }
 
 h2 {
@@ -93,4 +93,9 @@ footer img {
 .contact img {
   max-width: 75px;
   border-radius: 50%;
+}
+
+.error {
+    font-size: 40px;
+    margin-top : 75px;
 }
