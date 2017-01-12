@@ -4,7 +4,7 @@ switch($_GET['category']) {
         include("header.php"); ?>
         <main class="container">
             <div class="page-header">
-                <h1>Compositeurs</h1>
+                <h1 class="text-center">Compositeurs</h1>
             </div>
         </main>
         <?php break;
@@ -59,6 +59,8 @@ switch($_GET['category']) {
     default:
         header('Location: error.php');
 }
+
+
 ?>
 
     <!-- <h4>LA BOUTIQUE DES BG</h4>

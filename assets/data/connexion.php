@@ -16,7 +16,7 @@ if(isset($_POST['login']) && isset($_POST['pass']))
     $pdodsn = "$driver:Server=$host;Database=$nomDb";
     // Connexion PDO
     $pdo = new PDO($pdodsn, $user, $password);
-    $requete = "SELECT DISTINCT Code_Abonnée, Nom_Abonné, Prénom_Abonné
+    $requete = "SELECT DISTINCT /*Code_Abonnée, */Nom_Abonné, Prénom_Abonné
   FROM Abonné
   WHERE Login = ? AND Password = ?";
 
@@ -24,11 +24,11 @@ if(isset($_POST['login']) && isset($_POST['pass']))
     $stmt->execute(array($_POST['login'],$_POST['pass']));
 
     $reader = $stmt->fetch(PDO::FETCH_BOTH);
-    $_SESSION['code'] = $reader[0];
-    $_SESSION['nom'] = $reader[1];
-    $_SESSION['prenom'] = $reader[2];
+    //$_SESSION['code'] = $reader[0];
+    $_SESSION['nom'] = $reader[0];
+    $_SESSION['prenom'] = $reader[1];
 
     $pdo = null;
 }
-
 header ("Location: $_SERVER[HTTP_REFERER]" );
+?>
