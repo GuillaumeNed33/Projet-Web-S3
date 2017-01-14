@@ -33,7 +33,7 @@
                 <a class="navbar-brand" href="index.php"><img src="img/logoW.png"></a>
             </div>
 
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alphabétique<b class="caret"></b></a>
@@ -121,7 +121,6 @@
                     </div>
                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
                 </form>
-
                 <ul class="nav navbar-nav navbar-right">
                     <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
                         <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte</a></li>

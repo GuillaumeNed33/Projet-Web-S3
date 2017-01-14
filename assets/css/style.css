@@ -72,14 +72,13 @@ h2 {
     height: 300px;
 }
 
-.bs-docs-footer {
+footer {
     padding-top: 50px;
     padding-bottom: 50px;
     margin-top: 100px;
     color: #99979c;
     text-align: center;
     background-color: #2a2730;
-    width: 100%
 }
 
 footer img {
