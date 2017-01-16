@@ -24,6 +24,7 @@ if(isset($queries[$_GET['category']])) {
 } else {
     header('Location: error.php');
 }
+
 include("header.php"); ?>
     <main class="container">
         <div class="page-header">
