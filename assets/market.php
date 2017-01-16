@@ -13,9 +13,11 @@ $queries = [
     'interpretes' => "SELECT DISTINCT (Nom_Musicien),  FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
     'chef_orchestre' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
     'orchestres' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
+    'epoqueC' => "SELECT Nom_Musicien FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
+    'epoqueI' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
+    'instruments' => "SELECT Nom_Instrument FROM Instrument WHERE Nom_Musicien LIKE N'".$initial."';" ,
+    'genre' => "SELECT Libellé_Abrégé FROM Genre WHERE Libellé_Abrégé LIKE N'".$initial."';" ,
 ];
-
-
 
 if(isset($queries[$_GET['category']])) {
     $stmt =  $dbh->prepare($queries[$_GET['category']]);
@@ -28,17 +30,20 @@ if(isset($queries[$_GET['category']])) {
 include("header.php"); ?>
     <main class="container-fluid">
         <div class="page-header">
+            <ul class="list-group">
+                <li class="list-group-item text-center">
+                    <?php
+                    foreach(range('A','Z') as $i) {
+                        echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
+                        if ($i != "Z") echo " | ";
+                    }
+                    ?>
+                </li>
+            </ul>
+        </div>
 
             <div class="musicien">
                 <ul class="list-group">
-                    <li class="list-group-item">
-                        <?php
-                        foreach(range('A','Z') as $i) {
-                            echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
-                            if ($i != "Z") echo " | ";
-                        }
-                        ?>
-                    </li>
                 <?php
                     while($row = $stmt->fetch()) { //echo $row['Code_Musicien'] ?>
                         <li class='list-group-item'>
@@ -50,6 +55,5 @@ include("header.php"); ?>
                     <?php } ?>
                 </ul>
             </div>
-        </div>
     </main>
 <?php include("footer.php");?>

@@ -45,38 +45,38 @@
                             <li><a href="market.php?category=orchestres">Orchestres</a></li>
                         </ul>
                     </li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
+                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
                         <ul class="dropdown-menu multi-level">
                             <li class="dropdown-submenu">
                                 <a href="market.php?category=epoque&initiale=compo" class="dropdown-toggle" data-toggle="dropdown">Compositeurs</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="market.php?category=epoque&initiale=A">Antiquité</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=MA">Moyen-Age</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=XVI">XVIe siècle</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=XVII">XVIIe siècle</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=XVIII">XVIIIe siècle</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=XIX">XIXe siècle</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=XX">XXe siècle</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=A">Antiquité</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=MA">Moyen-Age</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=XVI">XVIe siècle</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=XVII">XVIIe siècle</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=XVIII">XVIIIe siècle</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=XIX">XIXe siècle</a></li>
+                                    <li><a href="market.php?category=epoqueC&initiale=XX">XXe siècle</a></li>
                                 </ul>
                             </li>
                             <li class="dropdown-submenu">
                                 <a href="market.php?category=epoque&initiale=inter" class="dropdown-toggle" data-toggle="dropdown">Interprètes</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="market.php?category=epoque&initiale=1900">Avant 1900</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1910">1900-1910</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1920">1910-1920</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1930">1920-1930</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1940">1930-1940</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1950">1940-1950</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1960">1950-1960</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1970">1960-1970</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1980">1970-1980</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=1990">1980-1990</a></li>
-                                    <li><a href="market.php?category=epoque&initiale=2000">Après 1990</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1900">Avant 1900</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1910">1900-1910</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1920">1910-1920</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1930">1920-1930</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1940">1930-1940</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1950">1940-1950</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1960">1950-1960</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1970">1960-1970</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1980">1970-1980</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1990">1980-1990</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=2000">Après 1990</a></li>
                                 </ul>
                             </li>
                         </ul>
-                    <li>
+                    </li>
                     <li>
                         <a href="market.php?category=instruments">Instruments</a>
                     </li>
@@ -87,12 +87,12 @@
                         <a href="contact.php">À propos</a>
                     </li>
                 </ul>
-                <form class="navbar-form navbar-left" role="search">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Rechercher">
-                    </div>
-                    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
-                </form>
+                <!-- <form class="navbar-form navbar-left" role="search">
+                     <div class="form-group">
+                         <input type="text" class="form-control" placeholder="Rechercher">
+                     </div>
+                     <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-search"></i></button>
+                 </form>-->
                 <ul class="nav navbar-nav navbar-right">
                     <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
                         <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte</a></li>
@@ -125,42 +125,42 @@
                         <span class="input-group-addon glyphicon glyphicon-lock" id="basic-addon1"></span>
                         <input type="password" class="form-control" placeholder="Password" aria-describedby="basic-addon2" name="pass">
                     </div>
-            </div>
-            <div class="modal-footer">
-                <a role="button" data-toggle="collapse" href="#collapseRegister" aria-expanded="false" aria-controls="collapseRegister"><b>Pas encore membre ? Inscris toi !</b></a>
-                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                <button type="submit" value="Submit" class="btn btn-primary">Connexion</button>
-                <div class="collapsing" id="collapseRegister">
-                    <div class="well">
-                        <h2 class="text-center">Inscription</h2>
-                        <form action="data/inscription.php" method="post" class="text-center">
-                            <label id="Label1">Nom </label><input name="nom1" type="text"><br>
-                            <label id="Label2">Prénom </label><input name="prenom1" type="text"><br>
-                            <label id="Label3">Login </label><input name="loginRegister" type="text"><br>
-                            <label id="Label4">Password </label><input name="passRegister" type="password"><br>
-                            <label id="Label4Bis">Confirmation Password </label><input name="passConf1" type="password"><br>
-                            <label id="Label5">Adresse * </label><input name="adresse1" type="text"><br>
-                            <label id="Label6">Code Postal * </label><input name="code1" type="text"><br>
-                            <label id="Label7">Ville * </label><input name="ville1" type="text"><br>
-                            <label id="Label9">E-mail *</label><input name="mail1" type="text"><br>
-                            Pays *
-                            <select name="pays1" class="browser-default">
-                                <option>LOL</option>
-                                <option>LOL</option>
-                                <option>LOL</option>
-                                <option>LOL</option>
-                            </select>
-                            <div class="button">
-                                <button class="btn btn-danger" type="reset" name="action">Effacer</button>
-                                <button class="btn btn-primary" type="submit" name="action">Envoyer
-                                    <i class="glyphicon glyphicon-chevron-right"></i>
-                                </button>
-                            </div>
-                        </form>
+                    <div class="modal-footer">
+                        <a role="button" data-toggle="collapse" href="#collapseRegister" aria-expanded="false" aria-controls="collapseRegister"><b>Pas encore membre ? Inscris toi !</b></a>
+                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+                        <button type="submit" value="Submit" class="btn btn-primary">Connexion</button>
                     </div>
+                </form>
+            </div>
+            <div class="collapsing" id="collapseRegister">
+                <div class="well">
+                    <h2 class="text-center">Inscription</h2>
+                    <form action="data/inscription.php" method="post" class="text-center">
+                        <label id="Label1">Nom </label><input name="nom1" type="text"><br>
+                        <label id="Label2">Prénom </label><input name="prenom1" type="text"><br>
+                        <label id="Label3">Login </label><input name="loginRegister" type="text"><br>
+                        <label id="Label4">Password </label><input name="passRegister" type="password"><br>
+                        <label id="Label4Bis">Confirmation Password </label><input name="passConf1" type="password"><br>
+                        <label id="Label5">Adresse * </label><input name="adresse1" type="text"><br>
+                        <label id="Label6">Code Postal * </label><input name="code1" type="text"><br>
+                        <label id="Label7">Ville * </label><input name="ville1" type="text"><br>
+                        <label id="Label9">E-mail *</label><input name="mail1" type="text"><br>
+                        Pays *
+                        <select name="pays1" class="browser-default">
+                            <option>LOL</option>
+                            <option>LOL</option>
+                            <option>LOL</option>
+                            <option>LOL</option>
+                        </select>
+                        <div class="modal-footer">
+                            <button class="btn btn-danger" type="reset" name="action">Effacer</button>
+                            <button class="btn btn-primary" type="submit" name="action">Envoyer
+                                <i class="glyphicon glyphicon-chevron-right"></i>
+                            </button>
+                        </div>
+                    </form>
                 </div>
             </div>
-            </form>
         </div>
     </div>
 </div>
