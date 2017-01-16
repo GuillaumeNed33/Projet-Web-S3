@@ -7,7 +7,6 @@ foreach(range('A','z') as $i) {
     if (preg_match('#[A-Za-z]#',$i))
         $alphabet[] = $i;
 }
-
 if(isset($_GET['initiale'])) {
     $initial = $_GET['initiale'];
 }
@@ -115,7 +114,7 @@ include("header.php"); ?>
                 <?php
                 while($row = $stmt->fetch()) { //echo $row['Code_Musicien'] ?>
                     <li class='list-group-item'>
-                        <img class="img-rounded" src="image.php?Code=<?php echo $row['Code_Musicien']?>">
+                        <img class="img-rounded" src="imageMusicien.php?Code=<?php echo $row['Code_Musicien']?>">
                         <span> <?php echo $row['Nom_Musicien'] ?> </span>
                         <span> <?php echo $row['Nom_Musicien'] ?> </span>
                         <span><a href="albums.php?code=<?php echo $row['Code_Musicien'] ?>">Voir les albums</a></span>
