@@ -35,70 +35,39 @@ if(isset($queries[$_GET['category']])) {
 
 include("header.php"); ?>
     <main class="container-fluid">
+        <div class="page-header">
+            <ul class="list-group">
+                <li class="list-group-item text-center">
+                    <?php
+                    switch ($_GET['category']) {
+                        case 'compositeurs':
+                            foreach(range('A','Z') as $i) {
+                                echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
+                                if ($i != "Z") echo " | ";
+                            }
 
-        <?php
-        switch ($_GET['category']) {
-            case 'compositeurs': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+                            break;
+                        case 'interpretes':
+
                             foreach(range('A','Z') as $i) {
                                 echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
                                 if ($i != "Z") echo " | ";
                             }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'interpretes': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+                            break;
+                        case 'chef_orchestre':
                             foreach(range('A','Z') as $i) {
                                 echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
                                 if ($i != "Z") echo " | ";
                             }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'chef_orchestre': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+
+                            break;
+                        case 'orchestres':
                             foreach(range('A','Z') as $i) {
                                 echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
                                 if ($i != "Z") echo " | ";
                             }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'orchestres': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
-                            foreach(range('A','Z') as $i) {
-                                echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
-                                if ($i != "Z") echo " | ";
-                            }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'epoqueC': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+                            break;
+                        case 'epoqueC':
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=A'>Antiquité</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=MA'>Moyen-Age</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVI'>XVIe siècle</a>  |  ";
@@ -106,16 +75,9 @@ include("header.php"); ?>
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVIII'>XVIIIe siècle</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XIX'>XIXe siècle</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XX'>XXe siècle et plus</a>";
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'epoqueI': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+
+                            break;
+                        case 'epoqueI':
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1900'>Avant 1900</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1910'>1900-1910</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1920'>1910-1920</a>  |  ";
@@ -127,41 +89,25 @@ include("header.php"); ?>
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1980'>1970-1980</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1990'>1980-1990</a>  |  ";
                             echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=2000'>Après 1990</a>";
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'instruments': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+
+                            break;
+                        case 'instruments':
                             foreach(range('A','Z') as $i) {
                                 echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
                                 if ($i != "Z") echo " | ";
                             }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-            case 'genre': ?>
-                <div class="page-header">
-                    <ul class="list-group">
-                        <li class="list-group-item text-center">
-                            <?php
+                            break;
+                        case 'genre':
                             foreach(range('A','Z') as $i) {
                                 echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
                                 if ($i != "Z") echo " | ";
                             }
-                            ?>
-                        </li>
-                    </ul>
-                </div>
-                <?php break;
-        }
-        ?>
+                            break;
+                    }
+                    ?>
+                </li>
+            </ul>
+        </div>
 
 
         <div class="musicien">
