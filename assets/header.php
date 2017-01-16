@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php //session_start(); ?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -35,44 +35,16 @@
 
             <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alphabétique<b class="caret"></b></a>
-                        <ul class="dropdown-menu multi-level">
-                            <li class="dropdown-submenu">
-                                <a href="market.php?category=compositeurs" class="dropdown-toggle" data-toggle="dropdown">Compositeurs</a>
-                                <ul class="dropdown-menu">
-                                    <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
-                                        <li><a href="market.php?category=compositeurs&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="market.php?category=interpretes" class="dropdown-toggle" data-toggle="dropdown">Interprètes</a>
-                                <ul class="dropdown-menu">
-                                    <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
-                                        <li><a href="market.php?category=interpretes&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="market.php?category=chefs_orchestre" class="dropdown-toggle" data-toggle="dropdown">Chefs d'Orchestre</a>
-                                <ul class="dropdown-menu">
-                                    <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
-                                        <li><a href="market.php?category=chefs_orchestre&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
-                            <li class="dropdown-submenu">
-                                <a href="market.php?category=orchestres" class="dropdown-toggle" data-toggle="dropdown">Orchestres</a>
-                                <ul class="dropdown-menu">
-                                    <?php for($alpha = 65; $alpha != 91; $alpha++) { ?>
-                                        <li><a href="market.php?category=orchestres&initiale=<?php echo chr($alpha);?>"><?php echo chr($alpha);?></a></li>
-                                    <?php } ?>
-                                </ul>
-                            </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Musiciens
+                            <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="market.php?category=compositeurs">Compositeurs</a></li>
+                            <li><a href="market.php?category=intepretes">Intérprètes</a></li>
+                            <li><a href="market.php?category=chef_orchestre">Chef d'orchestres</a></li>
+                            <li><a href="market.php?category=orchestres">Orchestres</a></li>
                         </ul>
-                    <li>
-                    <li>
+                    </li>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
                         <ul class="dropdown-menu multi-level">
                             <li class="dropdown-submenu">
