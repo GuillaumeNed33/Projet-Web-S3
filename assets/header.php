@@ -40,7 +40,7 @@
                             <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="market.php?category=compositeurs">Compositeurs</a></li>
-                            <li><a href="market.php?category=intepretes">Intérprètes</a></li>
+                            <li><a href="market.php?category=interpretes">Intérprètes</a></li>
                             <li><a href="market.php?category=chef_orchestre">Chef d'orchestres</a></li>
                             <li><a href="market.php?category=orchestres">Orchestres</a></li>
                         </ul>

@@ -12,16 +12,28 @@ if(isset($_GET['initiale'])) {
 }
 
 $queries = [
-    'compositeurs' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien
-                      FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien 
-                      WHERE Nom_Musicien LIKE :INITIAL;" ,
-    'interpretes' => "SELECT DISTINCT (Nom_Musicien),  FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'chef_orchestre' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'orchestres' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'epoqueC' => "SELECT Nom_Musicien FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'epoqueI' => "SELECT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'instruments' => "SELECT Nom_Instrument FROM Instrument WHERE Nom_Musicien LIKE N'".$initial."';" ,
-    'genre' => "SELECT Libellé_Abrégé FROM Genre WHERE Libellé_Abrégé LIKE N'".$initial."';" ,
+    'compositeurs' => "SELECT DISTINCT Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien WHERE Musicien.Nom_Musicien LIKE :INITIAL;" ,
+
+    'interpretes' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien, Prénom_Musicien
+                      FROM Musicien 
+                      INNER JOIN Interpréter ON Musicien.Code_Musicien = Interpréter.Code_Musicien 
+                      WHERE Nom_Musicien LIKE N'".$initial."';" ,
+
+    'chef_orchestre' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien, Prénom_Musicien
+                      FROM Musicien 
+                      INNER JOIN Direction ON Musicien.Code_Musicien = Direction.Code_Musicien
+                      INNER JOIN Orchestres ON Direction.Code_Orchestre = Orchestres.Code_Orchestre 
+                      WHERE Nom_Musicien LIKE N'".$initial."';" ,
+
+    'orchestres' => "SELECT DISTINCT Code_Orchestre, Nom_Orchestre FROM Orchestre WHERE Nom_Orchestre LIKE N'".$initial."';" ,
+
+    'epoqueC' => "SELECT DISTINCT Nom_Musicien FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
+
+    'epoqueI' => "SELECT DISTINCT Nom_Musicien FROM Musicien WHERE Nom_Musicien LIKE N'".$initial."';" ,
+
+    'instruments' => "SELECT DISTINCT Code_Instrument, Nom_Instrument FROM Instrument WHERE Nom_Instrument LIKE N'".$initial."';" ,
+
+    'genre' => "SELECT DISTINCT Code_Genre, Libellé_Abrégé FROM Genre WHERE Libellé_Abrégé LIKE N'".$initial."';" ,
 ];
 
 if(isset($queries[$_GET['category']])) {
@@ -34,6 +46,7 @@ if(isset($queries[$_GET['category']])) {
 
 include("header.php"); ?>
     <main class="container-fluid">
+        <h1 class="header text-center"><?php echo $_GET['category'];?></h1>
         <div class="page-header">
             <ul class="list-group">
                 <li class="list-group-item text-center">
@@ -109,17 +122,20 @@ include("header.php"); ?>
         </div>
 
 
-        <div class="musicien">
+        <div class="data">
             <ul class="list-group">
                 <?php
-                while($row = $stmt->fetch()) { //echo $row['Code_Musicien'] ?>
+                $empty = true;
+                while($row = $stmt->fetch()) { $empty = false; ?>
                     <li class='list-group-item'>
                         <img class="img-rounded" src="imageMusicien.php?Code=<?php echo $row['Code_Musicien']?>">
-                        <span> <?php echo $row['Nom_Musicien'] ?> </span>
+                        <span> <?php echo $row['Prénom_Musicien'] ?> </span>
                         <span> <?php echo $row['Nom_Musicien'] ?> </span>
                         <span><a href="albums.php?code=<?php echo $row['Code_Musicien'] ?>">Voir les albums</a></span>
                     </li>
-                <?php } ?>
+                <?php }
+                if($empty) { echo "Aucun compositeur ne commence par \"" . $initial. "\"."; }
+                ?>
             </ul>
         </div>
     </main>
