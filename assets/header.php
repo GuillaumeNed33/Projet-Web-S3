@@ -127,8 +127,8 @@
                     </div>
                     <div class="modal-footer">
                         <a role="button" data-toggle="collapse" href="#collapseRegister" aria-expanded="false" aria-controls="collapseRegister"><b>Pas encore membre ? Inscris toi !</b></a>
-                        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-                        <button type="submit" value="Submit" class="btn btn-primary">Connexion</button>
+                        <!-- <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>-->
+                        <button type="submit" value="Submit" class="btn btn-primary" style="margin-left: 10px;">Connexion</button>
                     </div>
                 </form>
             </div>
@@ -204,7 +204,7 @@
                                         <option>LOL</option>
                                     </select>
                                     <div class="text-right" style="margin-top: 15px;">
-                                        <button class="btn btn-danger" type="reset" name="action">Annuler</button>
+                                       <!-- <button class="btn btn-danger" type="reset" name="action">Annuler</button>-->
                                         <button class="btn btn-primary" type="submit" name="action">Enregistrer les modifications<i class="glyphicon glyphicon-chevron-right"></i></button>
                                     </div>
                                 </form>
