@@ -4,7 +4,7 @@ $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD"
 $initial = "";
 $date = [
   '0' => "1900",
-  '1900' => "1910",
+  '1900' => 1910,
   '1910' => "1920",
   '1920' => '1930',
   '1930' => '1940',
@@ -32,7 +32,10 @@ if(isset($_GET['initiale'])) {
 }
 
 $queries = [
-  'compositeurs' => "SELECT DISTINCT Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien FROM Musicien INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien WHERE Musicien.Nom_Musicien LIKE :INITIAL;" ,
+  'compositeurs' => "SELECT DISTINCT Musicien.Code_Musicien, Prénom_Musicien, Nom_Musicien
+  FROM Musicien
+  INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien
+  WHERE Musicien.Nom_Musicien LIKE :INITIAL;" ,
 
   'interpretes' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien, Prénom_Musicien
   FROM Musicien
@@ -49,15 +52,15 @@ $queries = [
   FROM Orchestres
   WHERE Nom_Orchestre LIKE :INITIAL;" ,
 
-  'epoqueC' => "SELECT DISTINCT Nom_Musicien
+  'epoqueC' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien, Prénom_Musicien
   FROM Musicien
   INNER JOIN Composer ON Musicien.Code_Musicien = Composer.Code_Musicien
-  WHERE Année_Naissance >= " . $date[$initial][0] . " and Année_Naissance < ". $epoque[$initial][1] . ";" ,
+  WHERE Année_Naissance >= :INITIAL and Année_Naissance < :DATE_FIN ;" ,
 
   'epoqueI' => "SELECT DISTINCT Musicien.Code_Musicien, Nom_Musicien, Prénom_Musicien
   FROM Musicien
   INNER JOIN Interpréter ON Musicien.Code_Musicien = Interpréter.Code_Musicien
-  WHERE Année_Naissance >= :INITIAL and Année_Naissance < ". $date[$initial] . ";" ,
+  WHERE Année_Naissance >= :INITIAL and Année_Naissance < :DATE_FIN ;" ,
 
   'instruments' => "SELECT DISTINCT Code_Instrument, Nom_Instrument
   FROM Instrument
@@ -68,15 +71,20 @@ $queries = [
   WHERE Libellé_Abrégé LIKE :INITIAL;"
 ];
 
-echo $epoque[$initial]; echo "   ";
-echo $epoque[$initial][0]; echo "   ";
-echo $epoque[$initial][1];
 
 if(isset($queries[$_GET['category']])) {
   $stmt =  $dbh->prepare($queries[$_GET['category']]);
-  $stmt->execute(array(':INITIAL' => $initial.'%'));
-  $stmt->bindColumn(1, $lob, PDO::PARAM_LOB);
-} else {
+  if($_GET['category'] == 'epoqueI')  {
+    $stmt->execute(array(':INITIAL' => $initial, ':DATE_FIN' => $date[$initial]));
+  }
+  else if($_GET['category'] == 'epoqueC') {
+    $stmt->execute(array(':INITIAL' => $epoque[$initial][0], ':DATE_FIN' => $epoque[$initial][1]));
+  }
+  else {
+    $stmt->execute(array(':INITIAL' => $initial.'%'));
+  }
+}
+else {
   header('Location: error.php');
 }
 
@@ -99,17 +107,17 @@ include("header.php"); ?>
 
           break;
           case 'epoqueI':
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1900'>Avant 1900</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1910'>1900-1910</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1920'>1910-1920</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1930'>1920-1930</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1940'>1930-1940</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1950'>1940-1950</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1960'>1950-1960</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1970'>1960-1970</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1980'>1970-1980</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1990'>1980-1990</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=2000'>Après 1990</a>";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=0'>Avant 1900</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1900'>1900-1910</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1910'>1910-1920</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1920'>1920-1930</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1930'>1930-1940</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1940'>1940-1950</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1950'>1950-1960</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1960'>1960-1970</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1970'>1970-1980</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1980'>1980-1990</a>  |  ";
+          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1990'>Après 1990</a>";
           break;
 
           default:
@@ -164,6 +172,7 @@ include("header.php"); ?>
               if($empty) {
                 echo "Aucun nom d'orchestres ne commence par \"" . $initial. "\".";
               }
+              $dbh = null;
               ?>
             </ul>
           </div>
