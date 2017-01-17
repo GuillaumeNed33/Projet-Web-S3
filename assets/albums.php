@@ -18,7 +18,7 @@ include("header.php"); ?>
             <?php
             while($row = $stmt->fetch()) { //echo $row['Code_Musicien'] ?>
                 <li class='list-group-item'>
-                    <img class="img-rounded" src="imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
+                    <img class="img-rounded" src="data/imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
                     <span> <?php echo $row['Nom_Musicien'] ?> </span>
                     <span> <?php echo $row['Nom_Musicien'] ?> </span>
                     <span><a href="albums.php?code=<?php echo $row['Code_Musicien'] ?>">Voir les albums</a></span>

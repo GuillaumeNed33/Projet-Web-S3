@@ -26,6 +26,16 @@ $epoque = [
   'XX' => array('1900','2017'),
 ];
 
+$title = [
+    'compositeurs' => "Compositeurs",
+    'interpretes' => "Interprètes",
+    'chef_orchestre' => "Chefs d'orchestre",
+    'orchestres' => "Orchestres",
+    'epoqueI' => "Interprètes (Par Epoque)",
+    'epoqueC' => "Compositeurs (Par Epoque)",
+    'instruments' => "Instruments",
+    'genre' => "Genre",
+];
 
 if(isset($_GET['initiale'])) {
   $initial = $_GET['initiale'];
@@ -90,7 +100,7 @@ else {
 
 include("header.php"); ?>
 <main class="container-fluid">
-  <h1 class="header text-center"><?php echo $_GET['category'];?></h1>
+  <h1 class="header text-center"><?php echo $title[$_GET['category']];?></h1>
   <div class="page-header">
     <ul class="list-group">
       <li class="list-group-item text-center">
@@ -140,37 +150,37 @@ include("header.php"); ?>
 
         if($_GET['category']=='orchestres') { ?>
           <li class='list-group-item'>
-            <span><a href="albums.php?code=<?php echo $row[0] ?>"><?php echo $row[1];?></a></span>
+            <span><a href="albums.php?category=orchestres&code=<?php echo $row[0] ?>"><?php echo $row[1];?></a></span>
           </li>
           <?php }
 
           else if($_GET['category']=='instruments') { ?>
             <li class='list-group-item'>
-              <img class="img-rounded" src="imageInstrument.php?Code=<?php echo $row[0]?>">
+              <img class="img-rounded" src="data/imageInstrument.php?Code=<?php echo $row[0]?>">
               <span> <?php echo $row[1]; ?> </span>
-              <span><a href="albums.php?code=<?php echo $row[0] ?>">Voir les albums</a></span>
+              <span><a href="albums.php?category=instruments&code=<?php echo $row[0] ?>">Voir les albums</a></span>
             </li>
             <?php }
 
             else if($_GET['category']=='genre') { ?>
               <li class='list-group-item'>
                 <span> <?php echo $row[1]; ?> </span>
-                <span><a href="albums.php?code=<?php echo $row[0] ?>">Voir les albums</a></span>
+                <span><a href="albums.php?category=genre&code=<?php echo $row[0] ?>">Voir les albums</a></span>
               </li>
               <?php }
 
               else { ?>
                 <li class='list-group-item'>
-                  <img class="img-rounded" src="imageMusicien.php?Code=<?php echo $row[0]?>">
+                  <img class="img-rounded" src="data/imageMusicien.php?Code=<?php echo $row[0]?>">
                   <span> <?php echo $row[2]; ?> </span>
                   <span> <?php echo $row[1]; ?> </span>
-                  <span><a href="albums.php?code=<?php echo $row[0] ?>">Voir les albums</a></span>
+                  <span><a href="albums.php?category=musiciens&code=<?php echo $row[0] ?>">Voir les albums</a></span>
                 </li>
                 <?php }
               }
 
               if($empty) {
-                echo "Aucun nom d'orchestres ne commence par \"" . $initial. "\".";
+                echo "Aucun nom " . $title[$_GET['category']] . " ne commence par \"" . $initial. "\".";
               }
               $dbh = null;
               ?>
