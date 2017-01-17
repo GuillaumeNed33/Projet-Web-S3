@@ -62,17 +62,17 @@
                             <li class="dropdown-submenu">
                                 <a href="market.php?category=epoque&initiale=inter" class="dropdown-toggle" data-toggle="dropdown">Interprètes</a>
                                 <ul class="dropdown-menu">
-                                    <li><a href="market.php?category=epoqueI&initiale=1900">Avant 1900</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1910">1900-1910</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1920">1910-1920</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1930">1920-1930</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1940">1930-1940</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1950">1940-1950</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1960">1950-1960</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1970">1960-1970</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1980">1970-1980</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=1990">1980-1990</a></li>
-                                    <li><a href="market.php?category=epoqueI&initiale=2000">Après 1990</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=0">Avant 1900</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1900">1900-1910</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1910">1910-1920</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1920">1920-1930</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1930">1930-1940</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1940">1940-1950</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1950">1950-1960</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1960">1960-1970</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1970">1970-1980</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1980">1980-1990</a></li>
+                                    <li><a href="market.php?category=epoqueI&initiale=1990">Après 1990</a></li>
                                 </ul>
                             </li>
                         </ul>
