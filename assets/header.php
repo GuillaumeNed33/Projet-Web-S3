@@ -45,7 +45,8 @@
                             <li><a href="market.php?category=orchestres">Orchestres</a></li>
                         </ul>
                     </li>
-                    <li><a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
+                    <li class=>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Epoque<b class="caret"></b></a>
                         <ul class="dropdown-menu multi-level">
                             <li class="dropdown-submenu">
                                 <a href="market.php?category=epoque&initiale=compo" class="dropdown-toggle" data-toggle="dropdown">Compositeurs</a>

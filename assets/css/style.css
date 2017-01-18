@@ -106,3 +106,9 @@ footer img {
 #collapseRegister {
   margin-top: 20px;
 }
+
+ul.bouton-album {
+    list-style: none;
+    display: inline;
+    padding: 5px;
+}
