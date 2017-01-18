@@ -114,8 +114,8 @@ include("header.php"); ?>
           echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVIII'>XVIIIe siècle</a>  |  ";
           echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XIX'>XIXe siècle</a>  |  ";
           echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XX'>XXe siècle et plus</a>";
-
           break;
+
           case 'epoqueI':
           echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=0'>Avant 1900</a>  |  ";
           echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1900'>1900-1910</a>  |  ";
