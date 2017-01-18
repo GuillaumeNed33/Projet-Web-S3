@@ -1,6 +1,7 @@
 <?php include("header.php"); ?>
 <main class="container">
     <div class="row">
+        <h1 class="text-center" style="margin-bottom: 75px;">À propos</h1>
         <div class="contact col-lg-5">
             <div class="col-lg-4">
                 <img src="img/thomas.jpg" alt="photo"/>

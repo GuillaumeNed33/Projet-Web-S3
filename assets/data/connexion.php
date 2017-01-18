@@ -3,32 +3,26 @@ session_start();
 
 if(isset($_POST['login']) && isset($_POST['pass']))
 {
-    // Paramètres de connexion
-    $_SESSION['nom'] = "";
-    $_SESSION['prenom'] = "";
+  // Paramètres de connexion
+  $_SESSION['nom'] = "";
+  $_SESSION['prenom'] = "";
 
-    $driver = 'sqlsrv';
-    $host = 'INFO-SIMPLET';
-    $nomDb = 'Classique_Web';
-    $user = 'ETD';
-    $password = 'ETD';
-    // Chaîne de connexion
-    $pdodsn = "$driver:Server=$host;Database=$nomDb";
-    // Connexion PDO
-    $pdo = new PDO($pdodsn, $user, $password);
-    $requete = "SELECT DISTINCT /*Code_Abonnée, */Nom_Abonné, Prénom_Abonné
+  $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
+  $requete = "SELECT DISTINCT Nom_Abonné, Prenom_Abonné, Abonné.Code_Abonné
   FROM Abonné
-  WHERE Login = ? AND Password = ?";
+  WHERE Login = :LOGIN AND Password = :PASSWORD";
+  $stmt =  $dbh->prepare($requete);
+  $stmt->bindParam(":LOGIN",$_POST['login']);
+  $stmt->bindParam(":PASSWORD", $_POST['pass']);
+  $stmt->execute();
+  $reader = $stmt->fetch();
+  $_SESSION['code'] = $reader[2];
+  $_SESSION['nom'] = $reader[0];
+  $_SESSION['prenom'] = $reader[1];
+  $_SESSION['panier'] = array();
 
-    $stmt = $pdo->prepare($requete);
-    $stmt->execute(array($_POST['login'],$_POST['pass']));
-
-    $reader = $stmt->fetch(PDO::FETCH_BOTH);
-    //$_SESSION['code'] = $reader[0];
-    $_SESSION['nom'] = $reader[0];
-    $_SESSION['prenom'] = $reader[1];
-
-    $pdo = null;
+  $dbh = null;
 }
+
 header ("Location: $_SERVER[HTTP_REFERER]" );
 ?>
