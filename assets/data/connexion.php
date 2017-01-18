@@ -19,8 +19,7 @@ if(isset($_POST['login']) && isset($_POST['pass']))
   $_SESSION['code'] = $reader[2];
   $_SESSION['nom'] = $reader[0];
   $_SESSION['prenom'] = $reader[1];
-  $_SESSION['panier'] = array();
-
+  $_SESSION['panier']= array();
   $dbh = null;
 }
 

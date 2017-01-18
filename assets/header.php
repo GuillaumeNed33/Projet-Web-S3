@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+<?php session_start();?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -88,7 +88,7 @@
               </li>
             </ul>
         <ul class="nav navbar-nav navbar-right">
-          <?php if(isset($_SESSION['nom']) && isset($_SESSION['prenom'])) { ?>
+          <?php if(isset($_SESSION['nom']) || isset($_SESSION['prenom'])) { ?>
             <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte</a></li>
             <?php }
             else { ?>
