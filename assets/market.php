@@ -107,32 +107,32 @@ include("header.php"); ?>
         <?php
         switch ($_GET['category']) {
           case 'epoqueC':
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=A'>Antiquité</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=MA'>Moyen-Age</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVI'>XVIe siècle</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVII'>XVIIe siècle</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XVIII'>XVIIIe siècle</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XIX'>XIXe siècle</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=XX'>XXe siècle et plus</a>";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=A'>Antiquité</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=MA'>Moyen-Age</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=XVI'>XVIe siècle</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=XVII'>XVIIe siècle</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=XVIII'>XVIIIe siècle</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=XIX'>XIXe siècle</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=XX'>XXe siècle et plus</a>";
           break;
 
           case 'epoqueI':
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=0'>Avant 1900</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1900'>1900-1910</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1910'>1910-1920</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1920'>1920-1930</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1930'>1930-1940</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1940'>1940-1950</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1950'>1950-1960</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1960'>1960-1970</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1970'>1970-1980</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1980'>1980-1990</a>  |  ";
-          echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=1990'>Après 1990</a>";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=0'>Avant 1900</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1900'>1900-1910</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1910'>1910-1920</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1920'>1920-1930</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1930'>1930-1940</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1940'>1940-1950</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1950'>1950-1960</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1960'>1960-1970</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1970'>1970-1980</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1980'>1980-1990</a>  |  ";
+          echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=1990'>Après 1990</a>";
           break;
 
           default:
           foreach(range('A','Z') as $i) {
-            echo "<a href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
+            echo "<a class='index' href='market.php?category=" . $_GET['category'] . "&initiale=" . $i . "'>" . $i . "</a>";
             if ($i != "Z") echo " | ";
           }
         }

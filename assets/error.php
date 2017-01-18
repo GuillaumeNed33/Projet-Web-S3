@@ -13,3 +13,50 @@
         </div>
     </main>
 <?php include("footer.php"); ?>
+
+<!--
+<div class="row">
+<div class="preview jumbotron col-md-5">
+<h2>Compositeurs</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=compositeurs" role="button">Learn more</a></p>
+</div>
+<div class="preview jumbotron col-xs-offset-2 col-md-5">
+<h2>Interprètes</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=interpretes" role="button">Learn more</a></p>
+</div>
+</div>
+<div class="row">
+<div class="preview jumbotron col-md-5">
+<h2>Chefs d'Orchestre</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=chefs_orchestre" role="button">Learn more</a></p>
+</div>
+<div class="preview jumbotron col-xs-offset-2 col-md-5">
+<h2>Orchestres</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=orchestres" role="button">Learn more</a></p>
+</div>
+</div>
+<div class="row">
+<div class="preview jumbotron col-md-5">
+<h2>Instruments</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=instruments" role="button">Learn more</a></p>
+</div>
+<div class="preview jumbotron col-xs-offset-2 col-md-5">
+<h2>Genre</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=genre" role="button">Learn more</a></p>
+</div>
+</div>
+<div class="row">
+<div class="preview jumbotron col-md-12">
+<h2>Epoque</h2>
+<p>...</p>
+<p><a class="btn btn-primary btn-lg" href="market.php?category=epoque&initiale=compo" role="button">Compositeurs</a>
+<a class="btn btn-primary btn-lg col-md-offset-2 " href="market.php?category=epoque&initiale=inter" role="button">Interprètes</a>
+</p>
+</div>
+</div>-->
