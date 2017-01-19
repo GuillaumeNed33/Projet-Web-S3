@@ -12,13 +12,8 @@ if(isset($_GET['code'])) {
 } else {
     header('Location: error.php');
 }
-
-
-const Aws_ID = "AKIAIGAWZDBK7XI7UWPQ"; // Identifiant
-const Aws_SECRET = "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"; //Secret
-const associateTag="classicarium-21"; // AssociateTag
-$client = new AmazonECS(Aws_ID, Aws_SECRET, 'FR', associateTag);
-include("header.php"); ?>
+include "data/AmazonRequest.php";
+include"header.php"; ?>
 <main class="container-fluid">
     <div class="page-header">
         <ul class="list-group">
@@ -28,11 +23,11 @@ include("header.php"); ?>
                     <img class="pochette img-rounded" src="imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
                     <span> <?php echo $row['Titre_Album'] ?> </span>
                     <?php
-                    //$response = $client->responseGroup('Large')->lookup($row['ASIN']);
-                    //echo $response->Items->Item->ASIN/*->$Items->$Item->$DetailPageURL*/;
+                    $response = $client->responseGroup('Large')->lookup($row['ASIN']);
+                    echo $response->Items->Item->ItemAttributes->ListPrice->Amount;
                     ?>
                     <ul class="bouton-album">
-                        <li><a data-toggle="modal" data-target="#enregistrement" class="btn btn-info">Écouter</a></li>
+                        <li><a href="detail.php?code=<?php echo $row['Code_Album']."&ASIN=".$row['ASIN'] ?>" class="btn btn-info">Écouter</a></li>
                         <li><a href="#" class="btn btn-primary">Ajouteur au panier</a></li>
                     </ul>
                 </li>
@@ -40,22 +35,6 @@ include("header.php"); ?>
 
             ?>
         </ul>
-    </div>
-
-    <div class="modal fade" id="enregistrement" tabindex="-1" role="dialog" aria-labelledby="enregistrementLabel">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    SELECT Titre
-                    FROM Album
-                    INNER JOIN Disque ON Album.Code_Album = Disque.Code_Album
-                    INNER JOIN Composition_Disque ON Disque.Code_Disque = Composition_Disque.Code_Disque
-                    INNER JOIN Enregistrement ON Composition_Disque.Code_Morceau = Enregistrement.Code_Morceau
-                </div>
-                <div class="modal-body">
-                    mooche 2
-                </div>
-        </div>
     </div>
 </main>
 <?php include("footer.php");?>
