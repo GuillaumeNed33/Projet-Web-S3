@@ -1,5 +1,4 @@
 <?php
-require('AmazonECS.class.php');
 
 $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
 $query = "SELECT Code_Album, Titre_Album, ASIN 
