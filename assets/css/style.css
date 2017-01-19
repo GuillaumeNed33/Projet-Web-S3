@@ -51,11 +51,21 @@
 }
 
 header {
-  margin-bottom: 100px;
+  margin-bottom: 45px;
 }
 
 main {
   min-height: 350px;
+}
+
+#title {
+  text-decoration: none;
+  color: black;
+}
+
+#tile:hover {
+  text-decoration: none;
+  color: black;
 }
 
 h2 {
@@ -67,21 +77,20 @@ h2 {
   top:0px;
 }
 
-.preview {
-  text-align: center;
-  height: 300px;
-}
-
 .index {
   font-size: 18px;
 }
 
+.jumbotron {
+  margin-bottom: 55px;
+}
+
 section {
   padding-top: 0;
-  background-image: url("../img/classic.jpg");
-  background-attachment: fixed;
-  background-position: center;
-  height: 200px;
+  background-position: right;
+  background-size: 100px 100px;
+  background-repeat: no-repeat;
+  height: 150px;
   line-height: 0;
 }
 
@@ -90,11 +99,11 @@ section {
   padding-top: 0;
   border: solid 1px black;
   background-color: #ffffff;
-  height: 200px;
+  height: 150px;
   width: 100%;
   transition: 0.4s;
   border-radius: 0px 5px 5px 0px;
-  padding-top: 75px;
+  padding-top: 55px;
 }
 
 @font-face {
@@ -134,19 +143,20 @@ section a:hover {
   margin: 0;
   padding: 0;
   border-radius: 0px 5px 5px 0px;
-  width: 300px;
+  width: 15%;
+  min-width: 150px;
   transition: 0.4s;
 }
 
 .blackKey:hover {
   background-color: #1C1C1C;
-  width: 295px;
+  width: 14%;
 }
 
 footer {
   padding-top: 50px;
   padding-bottom: 50px;
-  margin-top: 100px;
+  margin-top: 0;
   color: #99979c;
   text-align: center;
   background-color: #2a2730;
