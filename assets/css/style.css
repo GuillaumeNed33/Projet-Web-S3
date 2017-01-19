@@ -77,10 +77,6 @@ h2 {
   top:0px;
 }
 
-.index {
-  font-size: 18px;
-}
-
 section {
   padding-top: 0;
   background-position: right;
@@ -165,9 +161,24 @@ max-height: 150px;
 border-radius: 45px;
 }
 
+.index {
+  font-size: 18px;
+  color:#1C1C1C
+}
+
 .element {
   margin-top: 55px;
-  font-size: 36px;
+  font-size: 28px;
+}
+
+.data .list-group a {
+  text-decoration: none;
+  color: #5e5e5e;
+}
+
+.data .list-group a:hover {
+  text-decoration: none;
+  color: #1C1C1C;
 }
 
 footer {
