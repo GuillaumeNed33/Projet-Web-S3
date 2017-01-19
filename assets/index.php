@@ -14,7 +14,7 @@
   <a id="title" href="javascript:play_sound('multiaudio');">
     <section class="row" style="background-image: url('img/logo.png');">
       <div class="bande">
-        <h2 class="text-center">Classicarium, le meilleur de la musique classique</h2>
+        <h2 class="text-center" style="font-weight: bold;">Classicarium, le meilleur de la musique classique</h2>
       </div>
     </section>
   </a>
