@@ -8,7 +8,7 @@ if(isset($_POST['login']) && isset($_POST['pass']))
   $_SESSION['prenom'] = "";
 
   $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
-  $requete = "SELECT DISTINCT Nom_Abonné, Prenom_Abonné, Abonné.Code_Abonné
+  $requete = "SELECT DISTINCT Nom_Abonné, Prénom_Abonné, Abonné.Code_Abonné
   FROM Abonné
   WHERE Login = :LOGIN AND Password = :PASSWORD";
   $stmt =  $dbh->prepare($requete);
@@ -19,8 +19,7 @@ if(isset($_POST['login']) && isset($_POST['pass']))
   $_SESSION['code'] = $reader[2];
   $_SESSION['nom'] = $reader[0];
   $_SESSION['prenom'] = $reader[1];
-  $_SESSION['panier'] = array();
-
+  $_SESSION['panier']= array();
   $dbh = null;
 }
 

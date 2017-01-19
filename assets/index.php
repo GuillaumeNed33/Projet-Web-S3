@@ -1,54 +1,105 @@
 <?php include("header.php"); ?>
 
 <!------------------------------------BODY --------------------------------------->
+<div style="visibility: hidden">
+  <audio id="multiaudio" src="sounds/D.wav" preload="auto"></audio>
+  <audio id="multiaudio1" src="sounds/G.wav" preload="auto"></audio>
+  <audio id="multiaudio2" src="sounds/F.wav" preload="auto"></audio>
+  <audio id="multiaudio3" src="sounds/E.wav" preload="auto"></audio>
+  <audio id="multiaudio4" src="sounds/C.wav" preload="auto"></audio>
+  <audio id="multiaudio5" src="sounds/B.wav" preload="auto"></audio>
+</div>
 
-<main class="container">
-    <h2>Bienvenue dans La boutique musicale de Thomas et Guillaume</h2>
-    <div class="row">
-        <div class="preview jumbotron col-md-5">
-            <h2>Compositeurs</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=compositeurs" role="button">Learn more</a></p>
-        </div>
-        <div class="preview jumbotron col-xs-offset-2 col-md-5">
-            <h2>Interprètes</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=interpretes" role="button">Learn more</a></p>
-        </div>
+<main class="container-fluid">
+  <a id="title" href="javascript:play_sound('multiaudio');">
+    <section class="row" style="background-image: url('img/logo.png');">
+      <div class="bande">
+        <h2 class="text-center" style="font-size: 48px;">Classicarium vous présente le meilleur de la musique classique</h2>
+      </div>
+    </section>
+  </a>
+
+  <a href="javascript:play_sound('multiaudio1');">
+    <div class="blackKey">
     </div>
-    <div class="row">
-        <div class="preview jumbotron col-md-5">
-            <h2>Chefs d'Orchestre</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=chefs_orchestre" role="button">Learn more</a></p>
-        </div>
-        <div class="preview jumbotron col-xs-offset-2 col-md-5">
-            <h2>Orchestres</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=orchestres" role="button">Learn more</a></p>
-        </div>
+  </a>
+  <section class="row" style="background-image: url('img/compositeur.png');">
+    <a href="market.php?category=compositeurs">
+      <div class="bande">
+        <h2 class="text-right">Compositeurs</h2>
+      </div>
+    </a>
+  </section>
+
+  <a href="javascript:play_sound('multiaudio2');">
+    <div class="blackKey">
     </div>
-    <div class="row">
-        <div class="preview jumbotron col-md-5">
-            <h2>Instruments</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=instruments" role="button">Learn more</a></p>
-        </div>
-        <div class="preview jumbotron col-xs-offset-2 col-md-5">
-            <h2>Genre</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=genre" role="button">Learn more</a></p>
-        </div>
+  </a>
+
+  <section class="row" style="background-image: url('img/interprete.png');">
+    <a href="market.php?category=interpretes">
+      <div class="bande">
+        <h2 class="text-right">Interprètes</h2>
+      </div>
+    </a>
+  </section>
+
+  <section class="row" style="background-image: url('img/chef_orchestre.png');">
+    <a href="market.php?category=chef_orchestre">
+      <div class="bande">
+        <h2 class="text-right">Chefs d'Orchestre</h2>
+      </div>
+    </a>
+  </section>
+
+  <a href="javascript:play_sound('multiaudio3');">
+    <div class="blackKey">
     </div>
-    <div class="row">
-        <div class="preview jumbotron col-md-12">
-            <h2>Epoque</h2>
-            <p>...</p>
-            <p><a class="btn btn-primary btn-lg" href="market.php?category=epoque&initiale=compo" role="button">Compositeurs</a>
-                <a class="btn btn-primary btn-lg col-md-offset-2 " href="market.php?category=epoque&initiale=inter" role="button">Interprètes</a>
-            </p>
-        </div>
+  </a>
+
+  <section class="row" style="background-image: url('img/orchestre.png');">
+    <a href="market.php?category=orchestres">
+      <div class="bande">
+        <h2 class="text-right">Orchestres</h2>
+      </div>
+    </a>
+  </section>
+
+  <a href="javascript:play_sound('multiaudio4');">
+    <div class="blackKey">
     </div>
+  </a>
+
+  <section class="row" style="background-image: url('img/instrument.png');">
+    <a href="market.php?category=instruments">
+      <div class="bande">
+        <h2 class="text-right">Instruments</h2>
+      </div>
+    </a>
+  </section>
+
+  <a href="javascript:play_sound('multiaudio5');">
+    <div class="blackKey">
+    </div>
+  </a>
+
+  <section class="row" style="background-image: url('img/genre.png');">
+    <a href="market.php?category=genre">
+      <div class="bande">
+        <h2 class="text-right">Genre</h2>
+      </div>
+    </a>
+  </section>
 </main>
+
+<script type="text/javascript">
+function play_sound(s) {
+  var a = new Audio();						// create a new audio object
+  a.src = document.getElementById(s).src;
+  a.load();
+  a.volume = 0.1;
+  a.play();
+}
+</script>
 
 <?php include("footer.php");?>
