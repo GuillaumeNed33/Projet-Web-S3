@@ -55,7 +55,7 @@ header {
 }
 
 main {
-  min-height: 350px;
+  min-height: 500px;
 }
 
 #title {
@@ -176,9 +176,9 @@ border-radius: 45px;
   color: #5e5e5e;
 }
 
-.data .list-group a:hover {
+.data .list-group li:hover {
   text-decoration: none;
-  color: #1C1C1C;
+  background-color: rgba(216,216,216,0.6);
 }
 
 footer {

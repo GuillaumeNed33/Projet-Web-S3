@@ -168,11 +168,9 @@ include("header.php"); ?>
                 <?php }
 
                 else if($_GET['category']=='genre') { ?>
-                    <a href="albums.php?category=genre&code=<?php echo $row[0] ?>">
+                    <a class="element" href="albums.php?category=genre&code=<?php echo $row[0] ?>">
                         <li class='list-group-item'>
-                            <div class="element col-lg-offset-1 col-lg-7">
-                                <span> <?php echo $row[1]; ?> </span>
-                            </div>
+                            <span> <?php echo $row[1]; ?> </span>
                         </li>
                     </a>
                 <?php }
@@ -190,7 +188,7 @@ include("header.php"); ?>
             }
 
             if($empty) {
-                echo "Aucun nom " . $title[$_GET['category']] . " ne commence par \"" . $initial. "\".";
+                echo "<p style='font-size:24px;'>Aucun nom de " . $title[$_GET['category']] . " ne commence par \"" . $initial. "\".</p>";
             }
             $dbh = null;
             ?>
