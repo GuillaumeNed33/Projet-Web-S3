@@ -33,7 +33,7 @@
           <a class="navbar-brand" href="index.php"><img src="img/logoW.png"></a>
         </div>
 
-        <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-1">
+        <div id="bs-example-navbar-collapse-1" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="dropdown">
               <a class="dropdown-toggle" data-toggle="dropdown" href="#">Musiciens
@@ -234,5 +234,7 @@
     $('#myModal').on('shown.bs.modal', function () {
       $('#myInput').focus()
     })
-    $('.collapse').collapse()
+    $('.collapse').collapse('toggle')
     </script>
+
+    <!------------------------------------BODY --------------------------------------->

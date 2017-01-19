@@ -1,6 +1,5 @@
 <?php include("header.php"); ?>
 
-<!------------------------------------BODY --------------------------------------->
 <div style="visibility: hidden">
   <audio id="multiaudio" src="sounds/D.wav" preload="auto"></audio>
   <audio id="multiaudio1" src="sounds/G.wav" preload="auto"></audio>
