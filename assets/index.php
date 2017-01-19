@@ -14,7 +14,7 @@
   <a id="title" href="javascript:play_sound('multiaudio');">
     <section class="row" style="background-image: url('img/logo.png');">
       <div class="bande">
-        <h2 class="text-center" style="font-size: 48px;">Classicarium vous présente le meilleur de la musique classique</h2>
+        <h2 class="text-center">Classicarium, le meilleur de la musique classique</h2>
       </div>
     </section>
   </a>
@@ -23,13 +23,13 @@
     <div class="blackKey">
     </div>
   </a>
-  <section class="row" style="background-image: url('img/compositeur.png');">
-    <a href="market.php?category=compositeurs">
-      <div class="bande">
-        <h2 class="text-right">Compositeurs</h2>
-      </div>
-    </a>
-  </section>
+    <section class="row" style="background-image: url('img/compositeur.png');">
+      <a href="market.php?category=compositeurs">
+        <div class="bande">
+          <h2 class="text-right">Compositeurs</h2>
+        </div>
+      </a>
+    </section>
 
   <a href="javascript:play_sound('multiaudio2');">
     <div class="blackKey">

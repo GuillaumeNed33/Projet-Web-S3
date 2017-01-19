@@ -88,9 +88,9 @@ h2 {
 section {
   padding-top: 0;
   background-position: right;
-  background-size: 100px 100px;
+  background-size: 5% 100px;
   background-repeat: no-repeat;
-  height: 150px;
+  min-height: 150px;
   line-height: 0;
 }
 
@@ -99,11 +99,21 @@ section {
   padding-top: 0;
   border: solid 1px black;
   background-color: #ffffff;
-  height: 150px;
+  min-height: 150px;
   width: 100%;
   transition: 0.4s;
   border-radius: 0px 5px 5px 0px;
   padding-top: 55px;
+}
+
+#title section .bande {
+  padding-top : 5px;
+}
+
+@media screen and (max-width: 637px) {
+  #title section .bande {
+    padding-top : 5px;
+  }
 }
 
 @font-face {
