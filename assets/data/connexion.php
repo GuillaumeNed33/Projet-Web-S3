@@ -1,6 +1,8 @@
 <?php
 session_start();
+function Connexion() {
 
+}
 if(isset($_POST['login']) && isset($_POST['pass']))
 {
   // Paramètres de connexion
@@ -16,10 +18,16 @@ if(isset($_POST['login']) && isset($_POST['pass']))
   $stmt->bindParam(":PASSWORD", $_POST['pass']);
   $stmt->execute();
   $reader = $stmt->fetch();
-  $_SESSION['code'] = $reader[2];
-  $_SESSION['nom'] = $reader[0];
-  $_SESSION['prenom'] = $reader[1];
-  $_SESSION['panier']= array();
+  if(isset($reader)) {
+      $_SESSION['code'] = $reader[2];
+      $_SESSION['nom'] = $reader[0];
+      $_SESSION['prenom'] = $reader[1];
+      $_SESSION['panier']= array();
+  }
+  else {
+
+  }
+
   $dbh = null;
 }
 

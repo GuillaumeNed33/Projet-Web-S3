@@ -20,8 +20,12 @@ if(isset($_GET['ASIN'])) {
     if(isset($response)) {
         $price =  (isset($response->Items->Item->ItemAttributes->ListPrice->Amount))?$response->Items->Item->ItemAttributes->ListPrice->Amount:"indisponible";
         $title = (isset($response->Items->Item->ItemAttributes->Title))?$response->Items->Item->ItemAttributes->Title:"[No Title set]";
+        $panel = "default";
     }
     else {
+        echo "moche";
+        die();
+        $panel = "danger";
         $price = "indisponible";
         $title = "[No Title set]";
     }
@@ -30,9 +34,9 @@ if(isset($_GET['ASIN'])) {
 
 include "header.php"
 ?>
-<main class="container-fluid">
+<main class="container">
     <div style="margin-top: 25px;" class="row">
-        <div class="col-lg-3">
+        <div class="col-lg-4">
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Pochette</strong></div>
                 <div class="panel-body">
@@ -41,15 +45,15 @@ include "header.php"
             </div>
         </div>
         <div class="col-lg-6">
-            <div class="panel panel-default">
+            <div class="panel panel-<?php echo $panel?>">
                 <div class="panel-heading"><strong>Titre</strong></div>
                 <div class="panel-body">
                     <?php echo $title; ?>
                 </div>
             </div>
         </div>
-        <div class="col-lg-3">
-            <div class="panel panel-info">
+        <div class="col-lg-2">
+            <div class="panel panel-<?php echo $panel?>">
                 <div class="panel-heading"><strong>Prix</strong></div>
                 <div class="panel-body">
                     <?php
