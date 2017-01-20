@@ -19,7 +19,7 @@ include"header.php"; ?>
             <?php
             while($row = $stmt->fetch()) { ?>
                 <li class='list-group-item'>
-                    <img class="pochette img-rounded" src="imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
+                    <img class="img-rounded" src="imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
                     <span> <?php echo $row['Titre_Album'] ?> </span>
                     <?php
                     $response = $client->responseGroup('Large')->lookup($row['ASIN']);
