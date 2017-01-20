@@ -12,7 +12,7 @@ $query = [
   INNER JOIN Oeuvre ON Oeuvre.Code_Oeuvre = Instrumentation.Code_Oeuvre
   INNER JOIN Composer ON Composer.Code_Oeuvre = Oeuvre.Code_Oeuvre
   INNER JOIN Musicien ON Musicien.Code_Musicien = Composer.Code_Musicien
-  WHERE Code_Musicien = :CODE",
+  WHERE Musicien.Code_Musicien = :CODE",
 
   'interpretes' =>"SELECT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Disque ON Disque.Code_Album = Album.Code_Album
@@ -20,7 +20,7 @@ $query = [
   INNER JOIN Enregistrement ON Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
   INNER JOIN Interpréter ON Interpréter.Code_Morceau = Enregistrement.Code_Morceau
   INNER JOIN Musicien ON Musicien.Code_Musicien = Interpréter.Code_Musicien
-  WHERE Code_Musicien = :CODE",
+  WHERE Musicien.Code_Musicien = :CODE",
 
   'chef_orchestre' => "SELECT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Disque ON Disque.Code_Album = Album.Code_Album
@@ -28,7 +28,7 @@ $query = [
   INNER JOIN Enregistrement ON Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
   INNER JOIN Direction ON Direction.Code_Morceau = Enregistrement.Code_Morceau
   INNER JOIN Musicien ON Musicien.Code_Musicien = Direction.Code_Musicien
-  WHERE Code_Musicien = :CODE",
+  WHERE Musicien.Code_Musicien = :CODE",
 
   'orchestres' => "SELECT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Disque ON Disque.Code_Album = Album.Code_Album
@@ -36,7 +36,7 @@ $query = [
   INNER JOIN Enregistrement ON Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
   INNER JOIN Direction ON Direction.Code_Morceau = Enregistrement.Code_Morceau
   INNER JOIN Orchestres ON Orchestres.Code_Orchestre = Direction.Code_Orchestre
-  WHERE Code_Orchestre = :CODE",
+  WHERE Orchestres.Code_Orchestre = :CODE",
 
   'instruments' => "SELECT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Disque ON Disque.Code_Album = Album.Code_Album
@@ -44,7 +44,7 @@ $query = [
   INNER JOIN Enregistrement ON Enregistrement.Code_Morceau = Composition_Disque.Code_Morceau
   INNER JOIN Interpréter ON Interpréter.Code_Morceau = Enregistrement.Code_Morceau
   INNER JOIN Instrument ON Instrument.Code_Instrument = Interpréter.Code_Instrument
-  WHERE Code_Instrument = :CODE",
+  WHERE Instrument.Code_Instrument = :CODE",
 
   'genre' => "SELECT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Genre ON Genre.Code_Genre = Album.Code_Genre
@@ -66,7 +66,7 @@ include "header.php"; ?>
       <?php
       while($row = $stmt->fetch()) { ?>
         <li class='list-group-item'>
-          <img class="img-rounded" src="imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
+          <img class="img-rounded" src="data/imageAlbum.php?Code=<?php echo $row['Code_Album']?>">
           <span> <?php echo $row['Titre_Album'] ?> </span>
           <ul class="bouton-album">
             <li><a href="detail.php?code=<?php echo $row['Code_Album']."&ASIN=".$row['ASIN'] ?>" class="btn btn-info">Écouter</a></li>

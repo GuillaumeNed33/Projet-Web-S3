@@ -17,7 +17,7 @@ if(isset($_GET['code'])) {
 
 if(isset($_GET['ASIN'])) {
     $response = $client->responseGroup('Large')->lookup($_GET['ASIN']);
-    if(isset($response)) {
+    if(!empty($response)) {
         $price =  (isset($response->Items->Item->ItemAttributes->ListPrice->Amount))?$response->Items->Item->ItemAttributes->ListPrice->Amount:"indisponible";
         $title = (isset($response->Items->Item->ItemAttributes->Title))?$response->Items->Item->ItemAttributes->Title:"[No Title set]";
         $panel = "default";
@@ -29,6 +29,8 @@ if(isset($_GET['ASIN'])) {
         $price = "indisponible";
         $title = "[No Title set]";
     }
+} else {
+    header('Location: error.php');
 }
 
 
@@ -40,7 +42,7 @@ include "header.php"
             <div class="panel panel-default">
                 <div class="panel-heading"><strong>Pochette</strong></div>
                 <div class="panel-body">
-                    <img id="thumbnail" class="text-center img-rounded" src="imageAlbum.php?Code=<?php echo $_GET['code']?>">
+                    <img id="thumbnail" class="text-center img-rounded" src="data/imageAlbum.php?Code=<?php echo $_GET['code']?>">
                 </div>
             </div>
         </div>
@@ -85,10 +87,10 @@ include "header.php"
                         <?php
                         while($row = $stmt->fetch()) {
                         ?>
-                        <div class="text-center col-lg-6">
+                        <div class="text-center col-lg-8">
                             <?php echo $row['Titre']; ?>
                         </div>
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             <audio controls>
                                 <source src="data/AudioEnregistrement.php?Code=<?php echo $row['Code_Morceau'] ?>" type="audio/mpeg">
                             </audio>

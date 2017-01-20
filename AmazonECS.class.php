@@ -348,7 +348,7 @@ class AmazonECS
    *
    * @return array An arrayrepresentation of the given object
    */
-  protected function objectToArray($object)
+  public function objectToArray($object)
   {
     $out = array();
     foreach ($object as $key => $value)
