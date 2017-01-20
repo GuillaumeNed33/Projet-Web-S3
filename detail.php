@@ -101,4 +101,4 @@ include "header.php"
     </div>
 </main>
 
-<?php include "footer.php"?>
+<?php include "footer.php" ?>

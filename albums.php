@@ -58,7 +58,7 @@ if(isset($_GET['category']) && isset($_GET['code'])) {
   header('Location: error.php');
 }
 include "data/AmazonRequest.php";
-include"header.php"; ?>
+include "header.php"; ?>
 
 <main class="container-fluid">
   <div class="page-header">
@@ -73,10 +73,9 @@ include"header.php"; ?>
           echo $response->Items->Item->ItemAttributes->ListPrice->Amount;
           ?>
           <ul class="bouton-album">
-            <li><a href="detail.php?code=<?php echo $row['Code_Album']."&ASIN=".$row['ASIN'] ?>" class="btn btn-info">Écouter</a></li>
+            <li><a href="detail.php?code=<?php echo $row['Code_Album'] ?>" class="btn btn-info">Écouter</a></li>
             <li><a href="#" class="btn btn-primary">Ajouteur au panier</a></li>
           </ul>
-        </li>
         <?php }
 
         ?>
