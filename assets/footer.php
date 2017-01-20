@@ -8,13 +8,14 @@
         <div class="row">
             <div class=bs-docs-footer-links><b>Plan du Site</b>
                 <p>
-                    <a href="#">Compositeurs</a> -
-                    <a href="#">Interpretes</a> -
-                    <a href="#">Chef d'Orchestre</a> -
-                    <a href="#">Orchestres</a> -
-                    <a href="#">Epoque</a> -
-                    <a href="#">Instruments</a> -
-                    <a href="#">Genre</a>
+                    <a href="market.php?category=compositeurs">Compositeurs</a> -
+                    <a href="market.php?category=interpretes">Interprètes</a> -
+                    <a href="market.php?category=chef_orchestre">Chef d'Orchestre</a> -
+                    <a href="market.php?category=orchestres">Orchestres</a> -
+                    <a href="market.php?category=epoqueC">Compositeurs par Epoque</a> -
+                    <a href="market.php?category=epoqueI">Interprètes par Epoque</a> -
+                    <a href="market.php?category=instruments">Instruments</a> -
+                    <a href="market.php?category=genre">Genre</a>
                     <br>
                     <a href="contact.php">À propos</a>
                 </p>
