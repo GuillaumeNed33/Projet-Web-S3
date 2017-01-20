@@ -101,6 +101,6 @@
     }
 </script>
 <script type="text/javascript">
-    window.alert("Attention cette page possède des interactions sonores. Ne laissez pas votre son éteinds ! :D");
+  //  window.alert("Attention cette page possède des interactions sonores. Ne laissez pas votre son éteint !");
 </script>
 <?php include("footer.php");?>

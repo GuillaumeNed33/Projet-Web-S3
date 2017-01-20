@@ -176,7 +176,7 @@ include("header.php"); ?>
                 <?php }
 
                 else { ?>
-                    <a href="albums.php?category=musiciens&code=<?php echo $row[0] ?>">
+                    <a href="albums.php?category=<?php echo $_GET['category']; ?>&code=<?php echo $row[0] ?>">
                         <li class='list-group-item row'>
                             <img class="picture col-lg-4" src="data/imageMusicien.php?Code=<?php echo $row[0]?>">
                             <div class="element col-lg-offset-1 col-lg-7">
