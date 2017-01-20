@@ -175,8 +175,12 @@ include("header.php"); ?>
                     </a>
                 <?php }
 
-                else { ?>
-                    <a href="albums.php?category=<?php echo $_GET['category']; ?>&code=<?php echo $row[0] ?>">
+                else {
+                    $url = $_GET['category'];
+                    if($_GET['category'] == 'epoqueI') {$url = 'interpretes';}
+                    else if($_GET['category'] == 'epoqueC'){$url = 'compositeurs';}
+                    ?>
+                    <a href="albums.php?category=<?php echo $url; ?>&code=<?php echo $row[0] ?>">
                         <li class='list-group-item row'>
                             <img class="picture col-lg-4" src="data/imageMusicien.php?Code=<?php echo $row[0]?>">
                             <div class="element col-lg-offset-1 col-lg-7">
