@@ -181,6 +181,9 @@ border-radius: 45px;
   background-color: rgba(216,216,216,0.6);
 }
 
+#quantity {
+  width: 80px;
+}
 footer {
   padding-top: 50px;
   padding-bottom: 50px;

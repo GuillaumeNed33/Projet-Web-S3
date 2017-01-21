@@ -1,18 +1,18 @@
-<?php
-if($_POST['passRegister'] == $_POST['passConf1']) {
+<?php session_start();
+if($_POST['pass2'] == $_POST['passConf2']) {
     $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
-    $requete = "INSERT INTO Abonné(Nom_Abonné, Prénom_Abonné, Login, Password, Adresse, Ville, Code_Postal, Email) VALUES (?,?,?,?,?,?,?,?)";
+    $requete = "UPDATE Abonné SET Login = ?, Password = ?, Adresse = ?, Ville = ?, Code_Postal = ?, Email = ? WHERE Abonné.Code_Abonné = ?;";
+
     $stmt = $dbh->prepare($requete);
     $stmt->execute(
         array(
-            $_POST['nom1'],
-            $_POST['prenom1'],
-            $_POST['loginRegister'],
-            $_POST['passRegister'],
-            $_POST['adresse1'],
-            $_POST['ville1'],
-            $_POST['code1'],
-            $_POST['mail1']
+            $_POST['login2'],
+            $_POST['pass2'],
+            $_POST['adresse2'],
+            $_POST['ville2'],
+            $_POST['code2'],
+            $_POST['mail2'],
+            $_SESSION['code']
         )
     );
     $dbh = null;
@@ -25,6 +25,6 @@ if($_POST['passRegister'] == $_POST['passConf1']) {
         header ("Location:$_SERVER[HTTP_REFERER]" );
 }
 else {
-    header ("Location: ../error.php?erreur=pass" );
+    header ("Location: ../error.php?erreur=chang" );
 }
 ?>

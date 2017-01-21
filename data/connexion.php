@@ -1,16 +1,9 @@
 <?php
 session_start();
-function Connexion() {
-
-}
 if(isset($_POST['login']) && isset($_POST['pass']))
 {
-  // Paramètres de connexion
-  $_SESSION['nom'] = "";
-  $_SESSION['prenom'] = "";
-
   $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
-  $requete = "SELECT DISTINCT Nom_Abonné, Prénom_Abonné, Abonné.Code_Abonné
+  $requete = "SELECT DISTINCT Nom_Abonné, Prénom_Abonné, Abonné.Code_Abonné, Adresse, Ville, Code_Postal, Email
   FROM Abonné
   WHERE Login = :LOGIN AND Password = :PASSWORD";
   $stmt =  $dbh->prepare($requete);
@@ -18,18 +11,31 @@ if(isset($_POST['login']) && isset($_POST['pass']))
   $stmt->bindParam(":PASSWORD", $_POST['pass']);
   $stmt->execute();
   $reader = $stmt->fetch();
-  if(isset($reader)) {
-      $_SESSION['code'] = $reader[2];
+    $dbh = null;
+
+  if(!empty($reader[2])) {
       $_SESSION['nom'] = $reader[0];
       $_SESSION['prenom'] = $reader[1];
+      $_SESSION['code'] = $reader[2];
+      $_SESSION['login'] = $_POST['login'];
+      $_SESSION['password'] = $_POST['pass'];
+      $_SESSION['adresse'] = $reader[3];
+      $_SESSION['ville'] = $reader[4];
+      $_SESSION['codepostal'] = $reader[5];
+      $_SESSION['mail'] = $reader[6];
       $_SESSION['panier']= array();
-  }
-  else {
 
+      if($_SERVER[HTTP_REFERER] == 'http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/error.php?erreur=pass' ||
+          $_SERVER[HTTP_REFERER] == 'http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/error.php?erreur=auth' ||
+          $_SERVER[HTTP_REFERER] == 'http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/error.php?erreur=chang') {
+          header ("Location: ../index.php" );
+      }
+      else
+          header("Location:$_SERVER[HTTP_REFERER]" );
   }
-
-  $dbh = null;
+  else
+      header("Location: ../error.php?erreur=auth" );
 }
 
-header ("Location: $_SERVER[HTTP_REFERER]" );
+
 ?>

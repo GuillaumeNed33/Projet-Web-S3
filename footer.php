@@ -26,3 +26,9 @@
 </footer>
 </body>
 </html>
+<script type="text/javascript">
+    $('#myModal').on('shown.bs.modal', function () {
+        $('#myInput').focus()
+    })
+    $('.collapse').collapse('toggle')
+</script>
