@@ -50,6 +50,7 @@ if(isset($_GET['ASIN'])) {
     if(!isset($response->Items->Item->ItemAttributes->ListPrice->Amount)) {
         $panelPrice = "danger";
         $panier = "danger disabled";
+        $album = new Album($_GET['code'], $title, $annee, $pochette, $_GET['ASIN'], $price);
     }
     if(!isset($response->Items->Item->ItemAttributes->Title)) {
         $panelTitle = "danger";
@@ -114,11 +115,11 @@ include "header.php"
                             <label for="quantity" class="row">Quantité</label>
                             <div class="row">
                                 <center>
-                                    <input id="quantity" type="number" placeholder="1" class="form-control">
+                                    <input name="quantite" id="quantity" type="number" placeholder="1" class="form-control">
                                 </center>
                             </div>
 
-                            <a  style="margin-top: 15px;" type="submit" class="btn btn-<?php echo $panier;?> row" href="#">Ajouter au panier</a>
+                            <a  style="margin-top: 15px;" type="submit" class="btn btn-<?php echo $panier;?> row" href="#" onclick="ajouterProduit($album);">Ajouter au panier</a>
                         </div>
                     </form>
                 </div>

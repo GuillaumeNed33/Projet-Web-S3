@@ -11,46 +11,49 @@ class Album {
     public $_titre;
     public $_annee;
     public $_prix;
-    public $_pochette;
     public $_ASIN;
-    public $_quantite = 0;
+    public $_quantite = 1;
 
-    public function __construct($id, $titre, $annee, $pochette, $ASIN, $prix) {
+    public function __construct($id, $titre, $annee, $ASIN, $prix) {
         $this->_id($id);
         $this->_titre($titre);
         $this->_annee($annee);
-        $this->_pochette($pochette);
         $this->_ASIN($ASIN);
         $this->_prix($prix);
     }
 
     public function addQte() {
-      $_quantite++;
+        $this->_quantite = $this->_quantite + 1;
     }
 
     public function DeleteQte() {
-      if($_quantite < 1)
-      $_quantite--;
+      if($this->_quantite < 1)
+          $this->_quantite = $this->_quantite - 1;
     }
 
     public function existProduit($arrayName) {
       $exist = false;
-      foreach($element as $arrayName)
+      foreach($arrayName as $element)
       {
-        if($element.$_id == $_id) {
+        if($element._id == $this->_id) {
           $exist = true;
         }
       }
       return $exist;
     }
 
-    public function getIndex()
+    public function setQte($nb)
+    {
+        $this->_quantite = $this->_quantite + $nb;
+    }
+
+    public function getIndex($arrayName)
     {
       $i = 0;
       $index = -1;
-      foreach($element as $arrayName)
+      foreach($arrayName as $element)
       {
-        if($element.$_id == $_id) {
+        if($element._id == $this->_id) {
           $index = $i;
         }
         $i++;
