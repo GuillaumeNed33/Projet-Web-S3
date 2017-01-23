@@ -21,7 +21,7 @@
                 </p>
             </div>
         </div>
-        <p id="copyright">&copy; PommePoireBanane - Thomas Blanc & Guillaume Nedelec - 2016/2017<p>
+        <p id="copyright">&copy;Thomas Blanc & Guillaume Nedelec - S3C - 2016/2017<p>
     </div>
 </footer>
 </body>
