@@ -1,4 +1,9 @@
-<?php session_start();?>
+<?php
+$adresse = "http://".$_SERVER['SERVER_NAME']. $_SERVER["REQUEST_URI"];
+require_once "data/album.php";
+require_once "data/Enregistrement.php";
+session_start();
+?>
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -86,6 +91,10 @@
                     <li>
                         <a href="contact.php">À propos</a>
                     </li>
+                    <?php
+                    if($adresse == "http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/index.php" || $adresse == "http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/") { ?>
+                        <li><a id="info" style="width: 250px;" href="#" title="Informations" data-toggle="popover" data-trigger="focus" data-placement="bottom" data-content="Cette page est une expérience musicale, pensez à activer votre son !"></a></li>
+                    <?php } ?>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <?php if(isset($_SESSION['nom']) || isset($_SESSION['prenom'])) {
@@ -97,17 +106,16 @@
                                 </li>
                             <?php }
                         } ?>
-                        <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte</a></li>
+                        <li><a href="#" data-toggle="modal" data-target="#infoCompte">Mon Compte  <span class="badge"><?php echo count($_SESSION['panier']['album']) + count($_SESSION['panier']['enregistrement']);?></a></li>
                     <?php }
 
-                    else { ?>
-                        <?php
+                    else {
                         if(isset($_GET['erreur']) && !empty($_GET['erreur'])) {
                             if($_GET['erreur']=='pass') { ?>
-                                <li><a href="#" data-trigger="focus" data-placement="bottom" type="button" data-toggle="popover" title="Erreur Inscription" data-content="L'inscription a échouée. Le mot de passe était différent de sa confirmation."></a></li>
+                                <li><a href="#" style="width: 200px;" data-trigger="focus" data-placement="bottom" type="button" data-toggle="popover" title="Erreur Inscription" data-content="L'inscription a échouée. Le mot de passe était différent de sa confirmation."></a></li>
                             <?php }
                             else if($_GET['erreur']=='auth') { ?>
-                                <li><a href="#" data-trigger="focus" data-placement="bottom" type="button" data-toggle="popover" title="Erreur Authentification" data-content="Le login ou le mot de passe est incorect."></a></li>
+                                <li><a href="#" style="width: 200px;" data-trigger="focus" data-placement="bottom" type="button" data-toggle="popover" title="Erreur Authentification" data-content="Le login ou le mot de passe est incorect."></a></li>
                             <?php }
                         } ?>
                         <li><a href="#" data-toggle="modal" data-target="#connexion">Connexion</a></li>
@@ -119,15 +127,13 @@
 </header>
 
 <!--- MODAL CONNEXION -->
-<?php include "data/ModalConnexion.php" ?>
+<?php include "ModalConnexion.php" ?>
 
 <!-- MODAL INFORMATIONS COMPTE -->
-<?php include "data/ModalCompte.php" ?>
+<?php include "ModalCompte.php" ?>
 
 <script type="text/javascript">
-    $(function () {
-        $('[data-toggle="popover"]').popover('show');
-    })
+    $('[data-toggle="popover"]').popover('show');
 </script>
 
 <!------------------------------------BODY --------------------------------------->

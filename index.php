@@ -93,14 +93,12 @@
 
 <script type="text/javascript">
     function play_sound(s) {
-        var a = new Audio();						// create a new audio object
+        var a = new Audio();
         a.src = document.getElementById(s).src;
         a.load();
         a.volume = 0.1;
         a.play();
     }
 </script>
-<script type="text/javascript">
-  //  window.alert("Attention cette page possède des interactions sonores. Ne laissez pas votre son éteint !");
-</script>
+
 <?php include("footer.php");?>

@@ -1,5 +1,6 @@
 <?php
 include "data/AmazonRequest.php";
+require_once "data/album.php";
 
 $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
 
@@ -50,7 +51,6 @@ if(isset($_GET['ASIN'])) {
     if(!isset($response->Items->Item->ItemAttributes->ListPrice->Amount)) {
         $panelPrice = "danger";
         $panier = "danger disabled";
-        $album = new Album($_GET['code'], $title, $annee, $pochette, $_GET['ASIN'], $price);
     }
     if(!isset($response->Items->Item->ItemAttributes->Title)) {
         $panelTitle = "danger";
@@ -93,6 +93,12 @@ include "header.php"
                     }
                     else { echo $price;}
                     ?>
+                    <?php if(!isset($_SESSION['code'])) { ?>
+                        <a  style="margin-top: 15px;" type="submit" class="btn btn-<?php echo $panier;?> row" onclick='ErrConnexion()' href="#">Ajouter au panier</a>
+                    <?php } else { ?>
+                        <a  style="margin-top: 15px;" type="submit" class="btn btn-<?php echo $panier;?> row" href="data/panier.php?action=ajoutAlbum&code=<?php echo $_GET['code']?>&prix=<?php echo $price;?>">Ajouter au panier</a>
+                    <?php } ?>
+
                 </div>
             </div>
         </div>
@@ -103,25 +109,6 @@ include "header.php"
                     <?php echo "<p><b>Genre : </b>" . $genre; ?><br>
                     <?php echo "<b>Année : </b>" . $annee ."</p>"; ?>
                     <a class="btn btn-<?php echo $panelURL;?> row" target="_blank" href="<?php echo $url;?>">Voir sur Amazon</a>
-                </div>
-            </div>
-        </div>
-        <div class="col-lg-2">
-            <div class="panel panel-<?php echo $panelPrice;?>">
-                <div class="panel-heading text-center"><strong>Acheter</strong></div>
-                <div class="panel-body">
-                    <form method="post" class="form-inline">
-                        <div class="text-center">
-                            <label for="quantity" class="row">Quantité</label>
-                            <div class="row">
-                                <center>
-                                    <input name="quantite" id="quantity" type="number" placeholder="1" class="form-control">
-                                </center>
-                            </div>
-
-                            <a  style="margin-top: 15px;" type="submit" class="btn btn-<?php echo $panier;?> row" href="#" onclick="ajouterProduit($album);">Ajouter au panier</a>
-                        </div>
-                    </form>
                 </div>
             </div>
         </div>
@@ -155,7 +142,11 @@ include "header.php"
                                 </div>
                                 <div class="col-lg-2">
                                     <center>
-                                        <a class="btn btn-primary row" href="#">Ajouter au panier</a>
+                                        <?php if(!isset($_SESSION['code'])) { ?>
+                                            <a class="btn btn-primary row" href="#" onclick='ErrConnexion()'>Ajouter au panier</a>
+                                        <?php } else { ?>
+                                            <a class="btn btn-primary row" href="data/panier.php?action=ajoutEnregistrement&code=<?php echo $row['Code_Morceau']?>&prix=<?php echo $row['Prix'];?>">Ajouter au panier</a>
+                                        <?php } ?>
                                     </center>
                                 </div>
                             </div>
@@ -169,5 +160,9 @@ include "header.php"
 <script type="text/javascript">
     $('.collapse').collapse()
 </script>
-
+<script type='text/javascript'>
+    function ErrConnexion() {
+        window.alert('Vous devez vous connecter pour accéder à ces fonctionnalitées');
+    }
+</script>
 <?php include "footer.php" ?>

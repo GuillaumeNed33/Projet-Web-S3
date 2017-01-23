@@ -23,7 +23,11 @@ if(isset($_POST['login']) && isset($_POST['pass']))
       $_SESSION['ville'] = $reader[4];
       $_SESSION['codepostal'] = $reader[5];
       $_SESSION['mail'] = $reader[6];
+
+      //PANIER
       $_SESSION['panier']= array();
+      $_SESSION['panier']['album'] = array();
+      $_SESSION['panier']['enregistrement'] = array();
 
       if($_SERVER[HTTP_REFERER] == 'http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/error.php?erreur=pass' ||
           $_SERVER[HTTP_REFERER] == 'http://info-timide.iut.u-bordeaux.fr/perso/2017/gnedelec001/Projet/error.php?erreur=auth' ||

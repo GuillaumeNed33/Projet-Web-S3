@@ -1,6 +1,7 @@
 <?php
 
 $dbh = new PDO("sqlsrv:Server=INFO-SIMPLET;Database=Classique_Web", "ETD", "ETD");
+
 $query = [
     'compositeurs' =>"SELECT DISTINCT Album.Code_Album, Titre_Album, ASIN FROM ALBUM
   INNER JOIN Disque ON Disque.Code_Album = Album.Code_Album

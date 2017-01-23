@@ -1,23 +1,22 @@
 <?php
+
 /**
  * Created by PhpStorm.
  * User: Guillaume
- * Date: 17/01/2017
- * Time: 21:45
+ * Date: 22/01/2017
+ * Time: 23:19
  */
-
-class Album {
+class Enregistrement
+{
     private $_id;
     private $_titre;
-    private $_annee;
+    private $_duree;
     private $_prix;
-    private $_ASIN;
 
-    public function __construct($id, $titre, $annee, $ASIN, $prix) {
+    public function __construct($id, $titre, $duree, $prix) {
         $this->setId($id);
         $this->setTitre($titre);
-        $this->setAnnee($annee);
-        $this->setASIN($ASIN);
+        $this->setDuree($duree);
         $this->setPrix($prix);
     }
     /* MUTATEURS*/
@@ -27,11 +26,8 @@ class Album {
     public function setTitre($val) {
         $this->_titre = $val;
     }
-    public function setAnnee($val) {
-        $this->_annee = $val;
-    }
-    public function setASIN($val) {
-        $this->_ASIN = $val;
+    public function setDuree($val) {
+        $this->_duree = $val;
     }
     public function setPrix($val) {
         $this->_prix = $val;
@@ -44,11 +40,8 @@ class Album {
     public function getTitre() {
         return $this->_titre;
     }
-    public function getAnnee() {
-        return $this->_annee;
-    }
-    public function getASIN() {
-        return $this->_ASIN;
+    public function getDuree() {
+        return $this->_duree;
     }
     public function getPrix() {
         return $this->_prix;
